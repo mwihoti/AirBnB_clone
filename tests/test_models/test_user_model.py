@@ -12,6 +12,7 @@ from io import StringIO
 import sys
 import datetime
 
+
 class TestUser(unittest.TestCase):
     """
     Defines class TestUser

@@ -12,6 +12,7 @@ from models.city import City
 from models.place import Place
 from models.review import Review
 
+
 class TestFileStorage(unittest.TestCase):
     def setUp(self):
         self.base = BaseModel()
@@ -27,6 +28,7 @@ class TestFileStorage(unittest.TestCase):
             pass
         else:
             os.mknod("file.json")
+
     def tearDown(self):
         del self.base
         del self.user
@@ -38,10 +40,12 @@ class TestFileStorage(unittest.TestCase):
         del self.storage
         if os.path.exists("file.json"):
             os.remove("file.json")
+
     def test_all(self):
         check = self.storage.all()
         self.assertIsNotNone(check)
         self.assertEqual(type(check), dict)
+
     def test_new(self):
         check = self.storage.all()
         self.user.name = "Mwihoti"
@@ -49,6 +53,7 @@ class TestFileStorage(unittest.TestCase):
         check2 = self.storage.new(self.user)
         val = "{}.{}".format(self.user.__class__.__name__, self.user.id)
         self.assertIsNotNone(check[val])
+
 
 if __name__ == "__main__":
     unittest.main()
