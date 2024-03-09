@@ -10,7 +10,7 @@ class Place(BaseModel):
     Defines class Place
     """
     city_id = ""
-    user._id = ""
+    user_id = ""
     name = ""
     description = ""
     number_rooms = 0
