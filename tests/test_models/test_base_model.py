@@ -14,7 +14,7 @@ class TestBaseModel(unittest.TestCase):
     Defines class TestBaseodel
     """
 
-    def setup(self):
+    def setUp(self):
         """
         initializes an instance of the BaseModel class and assigns
         a name attribute to it
@@ -22,7 +22,7 @@ class TestBaseModel(unittest.TestCase):
         self.my_model = BaseModel()
         self.my_model.name = "Dan Mwihoti"
 
-    def TearDown(self):
+    def tearDown(self):
         """
         Clearing instance
         """
@@ -63,7 +63,7 @@ class TestBaseModel(unittest.TestCase):
 
         self.assertEqual("BaseModel", (self.my_model.to_dict())["__class__"])
 
-    def test_dict_updated(Self):
+    def test_dict_updated(self):
         """
         Checks the data type of the updated_at value in the dictionary.
         """
@@ -75,4 +75,4 @@ class TestBaseModel(unittest.TestCase):
         Checks the data type of the created_at value in the dictionary.
         """
         check = self.my_model.to_dict()
-        self.assertEqual("<class 'str'>", str(type(tmp["created_at"])))
+        self.assertEqual("<class 'str'>", str(type(check["created_at"])))
