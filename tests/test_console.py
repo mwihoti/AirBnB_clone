@@ -13,6 +13,25 @@ class testConsole(unittest.TestCase):
     Defines class testConsole
     """
 
-    def test_create(self):
-        """Creates an  instance """
-        return HBNBCommand()
+    @classmethod
+    def setUp(self):
+        try:
+            os.rename("file.json", "tmp")
+        except IOError:
+            pass
+        FileStorage.__objects = {}
+
+    @classmethod
+    def tearDown(self):
+        try:
+            os.remove("file.json")
+        except IOError:
+            pass
+        try:
+            os.rename("tmp", "file.json")
+        except IOError:
+            pass
+
+
+if __name__ == "__main__":
+    unittest.main()

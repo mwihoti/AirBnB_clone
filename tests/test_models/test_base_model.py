@@ -76,3 +76,7 @@ class TestBaseModel(unittest.TestCase):
         """
         check = self.my_model.to_dict()
         self.assertEqual("<class 'str'>", str(type(check["created_at"])))
+
+
+if __name__ == "__main__":
+    unittest.main()

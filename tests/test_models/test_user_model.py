@@ -43,3 +43,7 @@ class TestUser(unittest.TestCase):
         new = User()
         em = getattr(new, "email")
         self.assertIsInstance(em, str)
+
+
+if __name__ == '__main__':
+    unittest.main()

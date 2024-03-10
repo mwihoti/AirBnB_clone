@@ -34,3 +34,7 @@ class TestState(unittest.TestCase):
         new = State()
         nm_str = getattr(new, "name")
         self.assertIsInstance(nm_str, str)
+
+
+if __name__ == '__main__':
+    unittest.main()

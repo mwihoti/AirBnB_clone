@@ -35,3 +35,7 @@ class TestCity(unittest.TestCase):
         new = City()
         nm_str = getattr(new, "name")
         self.assertIsInstance(nm_str, str)
+
+
+if __name__ == '__main__':
+    unittest.main()

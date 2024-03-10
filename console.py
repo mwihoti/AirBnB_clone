@@ -131,16 +131,15 @@ class HBNBCommand(cmd.Cmd):
         """
         Display string representations of all instances of a given class.
         """
-        arg_parts = parse(arg)
-        if len(arg_parts) > 0 and arg_parts[0] not in HBNBCommand.__classes:
+        arg_s = parse(arg)
+        if len(arg_s) > 0 and arg_s[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
         else:
             obj_array = []
             for obj in storage.all().values():
-                if len(arg_parts) > 0 and arg_parts[0] ==
-                obj.__class__.__name__:
+                if len(arg_s) > 0 and arg_s[0] == obj.__class__.__name__:
                     obj_array.append(obj.__str__())
-                elif len(arg_parts) == 0:
+                elif len(arg_s) == 0:
                     obj_array.append(obj.__str__())
             print(obj_array)
 

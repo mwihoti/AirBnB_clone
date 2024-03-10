@@ -42,3 +42,7 @@ class TestReview(unittest.TestCase):
         self.assertTrue("place_id" in new.__dir__())
         self.assertTrue("user_id" in new.__dir__())
         self.assertTrue("text" in new.__dir__())
+
+
+if __name__ == '__main__':
+    unittest.main()
