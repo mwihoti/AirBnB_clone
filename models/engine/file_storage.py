@@ -34,8 +34,9 @@ class FileStorage:
         for key, value in FileStorage.__objects.items():
             dictionary[key] = value.to_dict()
 
-        with open(FileStorage.__file_path, 'W', encoding='utf-8') as stor:
+        with open(FileStorage.__file_path, 'w', encoding='utf-8') as stor:
             json.dump(dictionary, stor)
+
     def reload(self):
         """
           deserializes the JSON file to __objects
@@ -49,3 +50,13 @@ class FileStorage:
         for (key, value) in objects.items():
             objects[key] = eval(key.split('.')[0] + '(**value)')
             self.__objects = objects
+
+    def delete(self, obj):
+        """Deletes obj from __objects
+        """
+        try:
+            key = obj.__class__.__name__ + '.' + str(obj.id)
+            del self.__objects[key]
+            return True
+        except Exception:
+            return False
